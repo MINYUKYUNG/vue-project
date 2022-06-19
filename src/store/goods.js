@@ -23,8 +23,6 @@ export default {
       const { data } = payload;
       let preNums = 4;
       
-      // console.log(data);
-      // state.all = data;
       await data.forEach(item => {
         item.price = Math.round(item.price)
         state.all = [...state.all, item];
@@ -42,8 +40,6 @@ export default {
     async getData(context) {
       // const result = await axios.get('https://fakestoreapi.com/products');
       const result = await axios.get('https://vue-shop-oinochoe.vercel.app/products.json');
-      // console.log(result);
-      // console.log(result.data);
     
       const data = result.data;
       context.commit('setState', {

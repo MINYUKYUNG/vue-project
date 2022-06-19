@@ -13,7 +13,7 @@
       </div>
 
       <div class="card lg:card-side shadow-xl mt-12 mb-8">
-        <figure class="bg-white p-8 lg:w-1/3 lg:p-20"><img :src="image" alt="이미지" class="object-contain h-72 w-full" /></figure>
+        <figure class="bg-white p-8 lg:w-1/3 lg:p-20"><img :src="image" alt="상품 이미지" class="object-contain h-72 w-full" /></figure>
 
         <div class="card-body lg:w-2/3 my-auto">
           <h2 class="card-title">{{ title }}</h2>
@@ -70,8 +70,6 @@ export default {
     }
   },
   created() {
-    // console.log('YesProduct 페이지,', this.$route.params);
-
     const { id, image, title, description, rating, price, category } = this.all[Number(this.paramsId) - 1]
     this.id = id
     this.image = image

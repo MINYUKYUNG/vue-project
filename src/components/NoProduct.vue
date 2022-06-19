@@ -13,9 +13,6 @@ export default {
     return {
       paramsId: this.$route.params.id
     }
-  },
-  // created() {
-  //   console.log('NoProduct 페이지,', this.$route.params);
-  // }
+  }
 }
 </script>

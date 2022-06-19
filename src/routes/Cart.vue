@@ -13,9 +13,9 @@
         <template v-if="Object.keys(saveCart).length !== 0">
           <section class="container mx-auto">
             
-            <!-- 개별상품 전체 + 구매하기 버튼 (CSS 용도로만 사용) -->
-            <div class="px-5">
-              <!-- 개별상품 전체 (CSS 용도로만 사용) -->
+            <!-- 개별상품 전체 + 구매하기 버튼 -->
+            <div class="px-5 xl:px-20">
+              <!-- 개별상품 전체 -->
               <div>
                 <!-- 개별상품 1개 -->
                 <YesCart @repage="reYesCart" :key="reLoad" />

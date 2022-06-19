@@ -12,7 +12,7 @@
         <RouterLink to="/" class="text-lg font-bold text-gray-700 dark:text-white">Vue Shop</RouterLink>
       </div>
 
-      <div class="flex-none md:flex-1">
+      <div class="hidden flex-none sm:flex md:flex-1">
           <RouterLink to="/fashion" class="btn btn-ghost text-gray-700 content-center btn-sm dark:text-white">패션</RouterLink>
           <RouterLink to="/accessory" class="btn btn-ghost text-gray-700 content-center btn-sm dark:text-white">액세서리</RouterLink>
           <RouterLink to="/digital" class="btn btn-ghost text-gray-700 content-center btn-sm dark:text-white">디지털</RouterLink>

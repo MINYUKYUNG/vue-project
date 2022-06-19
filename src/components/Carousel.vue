@@ -2,9 +2,9 @@
     <Carousel :wrapAround="true" :itemsToScroll="1" :itemsToShow="1" :autoplay="4000">
       <Slide v-for="image in images" :key="image.id">
         <RouterLink :to="image.to" style="max-height: 700px; width: 100%; object-fit: cover;" class="relative">
-          <h2 class="text-xl md:text-2xl xl:text-4xl text-white font-bold py-5 absolute right-2/3 top-1/3">
-            <span class="line-clamp-1">{{ image.des }}</span>
-            <span class="text-base block text-left text-white font-normal py-1.5 pl-px line-clamp-1">더 자세히 알아보기</span>
+          <h2 class="text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white font-bold absolute left-0 top-1/3 pl-10 lg:pl-36 2xl:pl-60">
+            <span class="">{{ image.des }}</span>
+            <span class="text-base block text-left text-white font-normal py-1.5 pl-px">더 자세히 알아보기</span>
           </h2>
           <img :src="image.url" :alt="'캐러셀 이미지' + image.id" style="max-height: 700px; width: 100%; object-fit: cover;" />
         </RouterLink>

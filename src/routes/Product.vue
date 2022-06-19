@@ -23,9 +23,6 @@ import YesProduct from '../components/YesProduct'
 import NoProduct from '../components/NoProduct'
 
 export default {
-  // created() {
-  //   console.log('Product 페이지,', this.$route.params);
-  // },
   computed: {
     ...mapState('goods', [
       'all'

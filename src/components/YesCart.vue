@@ -1,9 +1,9 @@
 <template>
-  <div v-for="{ id, count } in this.baseCart" :key="id" class="card lg:card-side border-solid border border-gray-200 my-12">
+  <div v-for="{ id } in this.baseCart" :key="id" class="card lg:card-side border-solid border border-gray-200 my-12">
 
     <!-- 이미지 -->
     <RouterLink :to="'/product/' + id" class="bg-white flex justify-center">
-      <figure class="bg-white h-56 w-56"><img :src="all[id-1].image" alt="이미지" class="object-contain h-5/6 w-5/6" /></figure>
+      <figure class="bg-white h-56 w-56"><img :src="all[id-1].image" alt="상품 이미지" class="object-contain h-5/6 w-5/6" /></figure>
     </RouterLink>
 
     <!-- 정보 -->
@@ -14,20 +14,20 @@
       </RouterLink>
 
       <!-- 가격 -->
-      <p class="text-3xl">${{ all[id-1].price * count }}</p>
+      <p class="text-3xl" :key="num">${{ all[id-1].price * saveCart[id].count }}</p>
 
       <!-- 증가감소 버튼 -->
       <div class="card-actions pt-4">
         <div class="btn-group">
-          <button class="btn btn-primary" @click="minusCart(id), $emit('repage')"> - </button>
-          <button class="btn no-animation btn-disabled bg-white text-black">{{ count }}</button>
-          <button class="btn btn-primary" @click="plusCart(id), $emit('repage')"> + </button>
+          <button class="btn btn-primary" @click="minusCart(id), countCart(-1)"> - </button>
+          <button class="btn no-animation btn-disabled bg-white text-black" :key="num">{{ saveCart[id].count }}</button>
+          <button class="btn btn-primary" @click="plusCart(id), countCart(1)"> + </button>
         </div>
       </div>
 
       <!-- X 버튼 -->
-      <button class="btn btn-circle btn-outline absolute bottom-8 right-8" @click="deleteItem(id), $emit('repage')">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+      <button class="btn btn-square btn-outline absolute bottom-8 right-8 border-gray-200" @click="deleteItem(id), $emit('repage')">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 stroke-gray-400 dark:hover:stroke-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
       </button>
     </div>
 
@@ -40,7 +40,8 @@ import { mapState } from 'vuex'
 export default {
   data() {
     return {
-      baseCart: []
+      baseCart: [],
+      num: 0
     }
   },
   computed: {
@@ -75,6 +76,9 @@ export default {
       this.$store.commit('cart/deleteItem', {
         id: value
       })
+    },
+    countCart(value) {
+      this.num = this.num + value
     }
   }
 }
