@@ -1,4 +1,5 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+// import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import Home from './Home'
 import Product from './Product'
 import Fashion from './Fashion'
@@ -8,7 +9,8 @@ import Cart from './Cart'
 import NotFound from './NotFound'
 
 export default createRouter({
-  history: createWebHashHistory(),
+  // history: createWebHashHistory(),
+  history: createWebHistory(),
   scrollBehavior() {
     return { top: 0 }
   },
