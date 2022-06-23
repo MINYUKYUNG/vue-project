@@ -95,10 +95,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-.input:focus {
-  outline: none;
-  outline-offset: none;
-}
-</style>
