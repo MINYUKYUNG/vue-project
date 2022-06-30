@@ -62,17 +62,7 @@ export default {
   },
   watch: {
     checked() {
-      // console.log(this.checked);
-      const documentEl = window.document.documentElement;
-      if (this.checked === false) {
-        documentEl.dataset.theme = 'light';
-        documentEl.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-      } else if (this.checked === true) {
-        documentEl.dataset.theme = 'dark';
-        documentEl.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      }
+      this.lightDark()
     },
     saveCart() {
       this.numberCart = 0;
@@ -86,13 +76,25 @@ export default {
       for (const key in {...this.headerCart}) {
         this.numberCart = this.numberCart + {...this.headerCart}[key].count // typeof는 number
       }
+    },
+    lightDark() {
+      const documentEl = window.document.documentElement;
+      if (this.checked === false) {
+        documentEl.dataset.theme = 'light';
+        documentEl.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else if (this.checked === true) {
+        documentEl.dataset.theme = 'dark';
+        documentEl.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
     }
   },
   created() {
     if (localStorage.getItem('theme')) {
       if (localStorage.getItem('theme') === 'dark') this.checked = true
-      else if (localStorage.getItem('theme') === 'light') this.checked = false
-    } else this.checked = false;
+      else if (localStorage.getItem('theme') === 'light') this.lightDark();
+    } else this.lightDark();
     this.redIcon()
   },
 }
