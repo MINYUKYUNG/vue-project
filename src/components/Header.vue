@@ -89,8 +89,10 @@ export default {
     }
   },
   created() {
-    if (localStorage.getItem('theme') === 'dark') this.checked = true
-    else if (localStorage.getItem('theme') === 'light') this.checked = false
+    if (localStorage.getItem('theme')) {
+      if (localStorage.getItem('theme') === 'dark') this.checked = true
+      else if (localStorage.getItem('theme') === 'light') this.checked = false
+    } else this.checked = false;
     this.redIcon()
   },
 }
