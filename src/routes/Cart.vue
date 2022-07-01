@@ -72,7 +72,7 @@ export default {
     YesCart
   },
   async created() {
-    await axios.get('https://vue-shop-oinochoe.vercel.app/products.json');
+    await axios.get('https://fakestoreapi.com/products');
     this.$store.commit('cart/loadCart')
   },
   computed: {
