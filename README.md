@@ -8,27 +8,22 @@
 - Options API로 파일 구성을 한, Vue.js 온라인 쇼핑몰 프로젝트
 
 - Light Mode
-![light](./src/assets/light%20ver.png)
+[![light](./src/assets/light%20ver.png)](https://vue-project-flax-five.vercel.app/)
 
 - Dark Mode
-![dark](./src/assets/dark%20ver.png)
+[![dark](./src/assets/dark%20ver.png)](https://vue-project-flax-five.vercel.app/)
 
 ### Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Project test
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Project build
 ```
 npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
 ```
