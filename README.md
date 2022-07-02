@@ -5,13 +5,15 @@
 - Axios API
 
 ## About project
-Options API로 파일 구성을 한, Vue.js 온라인 쇼핑몰 프로젝트
+- Options API로 파일 구성을 한, Vue.js 온라인 쇼핑몰 프로젝트
 
+- Light Mode
 ![light](./src/assets/light%20ver.png)
+
+- Dark Mode
 ![dark](./src/assets/dark%20ver.png)
 
 ### Project setup
----
 ```
 npm install
 ```
